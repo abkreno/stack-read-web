@@ -26,6 +26,7 @@ module.exports = {
     // add your custom rules here
     rules: {
         'react/forbid-prop-types': false,
+        'react/jsx-wrap-multilines': false,
         'no-underscore-dangle': ['error', {
             'allow': ['__REDUX_DEVTOOLS_EXTENSION_COMPOSE__', '__REDUX_DEVTOOLS_EXTENSION__', '__initialState__']
         }]
