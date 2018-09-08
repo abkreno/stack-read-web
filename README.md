@@ -1,6 +1,6 @@
 # Stack Read
 
-Keep track of all your read questions on Stackoverflow
+Track your reading progress on Stackoverflow
 
 ## Motivation
 
