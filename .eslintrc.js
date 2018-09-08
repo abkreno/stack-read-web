@@ -22,5 +22,9 @@ module.exports = {
         'ecmaFeatures': {
             'jsx': true,
         }
+    },
+    // add your custom rules here
+    rules: {
+        'react/forbid-prop-types': false,
     }
 }
