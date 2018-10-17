@@ -8,7 +8,6 @@ import { Provider } from 'react-redux';
 // If your server supports server rendering, use browserHistory replace with hashHistory.
 import configureStore from './store';
 import registerServiceWorker from './registerServiceWorker';
-import MainLayout from './layouts/MainLayout';
 import AppRoutes from './routes';
 
 const state = window.__initialState__ || undefined;
@@ -16,9 +15,7 @@ const store = configureStore(state);
 
 ReactDOM.render(
   <Provider store={store}>
-    <MainLayout>
-      <AppRoutes />
-    </MainLayout>
+    <AppRoutes />
   </Provider>,
   document.getElementById('root')
 );

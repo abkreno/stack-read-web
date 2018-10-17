@@ -7,7 +7,14 @@ import './MainLayout.css';
 const { Header, Content, Footer } = Layout;
 const { SubMenu } = Menu;
 
-const MainLayout = ({ children }) => (
+const getDefaultSelectedKeysBasedOnRoute = pathname => {
+  if (pathname.includes('about')) {
+    return ['about'];
+  }
+  return ['home'];
+};
+
+const MainLayout = ({ children, location }) => (
   <Layout className="main-layout">
     <Header>
       <div className="logo" />
@@ -15,11 +22,13 @@ const MainLayout = ({ children }) => (
         className="menu"
         theme="dark"
         mode="horizontal"
-        defaultSelectedKeys={['2']}
+        defaultSelectedKeys={getDefaultSelectedKeysBasedOnRoute(
+          location.pathname
+        )}
       >
-        <Menu.Item key="1">Home</Menu.Item>
-        <Menu.Item key="2">My Lists</Menu.Item>
-        <Menu.Item key="3">About</Menu.Item>
+        <Menu.Item key="home">Home</Menu.Item>
+        <Menu.Item key="my-lists">My Lists</Menu.Item>
+        <Menu.Item key="about">About</Menu.Item>
 
         <SubMenu
           key="sub1"
@@ -52,7 +61,8 @@ const MainLayout = ({ children }) => (
 );
 
 MainLayout.propTypes = {
-  children: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+  children: PropTypes.array.isRequired,
 };
 
 export default MainLayout;
