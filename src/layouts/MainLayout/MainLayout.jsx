@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Avatar, Layout, Menu, Breadcrumb } from 'antd';
 
-import './MainLayout.css';
-
 const { Header, Content, Footer } = Layout;
 const { SubMenu } = Menu;
 
