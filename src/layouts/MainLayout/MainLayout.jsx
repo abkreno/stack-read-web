@@ -8,13 +8,19 @@ const { Header, Content, Footer } = Layout;
 const { SubMenu } = Menu;
 
 const getDefaultSelectedKeysBasedOnRoute = pathname => {
-  if (pathname.includes('about')) {
-    return ['about'];
+  switch (pathname) {
+    case '/about':
+      return ['about'];
+    case '/my-lists':
+      return ['my-lists'];
+    case '/':
+      return ['home'];
+    default:
+      return [];
   }
-  return ['home'];
 };
 
-const MainLayout = ({ children, location }) => (
+const MainLayout = ({ children, location, history }) => (
   <Layout className="main-layout">
     <Header>
       <div className="logo" />
@@ -26,9 +32,15 @@ const MainLayout = ({ children, location }) => (
           location.pathname
         )}
       >
-        <Menu.Item key="home">Home</Menu.Item>
-        <Menu.Item key="my-lists">My Lists</Menu.Item>
-        <Menu.Item key="about">About</Menu.Item>
+        <Menu.Item key="home" onClick={() => history.push('/')}>
+          Home
+        </Menu.Item>
+        <Menu.Item key="my-lists" onClick={() => history.push('/my-lists')}>
+          My Lists
+        </Menu.Item>
+        <Menu.Item key="about" onClick={() => history.push('/about')}>
+          About
+        </Menu.Item>
 
         <SubMenu
           key="sub1"
@@ -56,6 +68,7 @@ const MainLayout = ({ children, location }) => (
 );
 
 MainLayout.propTypes = {
+  history: PropTypes.object.isRequired,
   location: PropTypes.object.isRequired,
   children: PropTypes.array.isRequired,
 };
