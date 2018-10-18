@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Avatar, Layout, Menu, Breadcrumb } from 'antd';
+import Avatar from 'antd/lib/avatar';
+import Menu from 'antd/lib/menu';
+import Layout from 'antd/lib/layout';
 
 const { Header, Content, Footer } = Layout;
 const { SubMenu } = Menu;
@@ -47,11 +49,6 @@ const MainLayout = ({ children, location }) => (
       </Menu>
     </Header>
     <Content className="content-container">
-      <Breadcrumb className="bread-crumb">
-        <Breadcrumb.Item>Home</Breadcrumb.Item>
-        <Breadcrumb.Item>List</Breadcrumb.Item>
-        <Breadcrumb.Item>App</Breadcrumb.Item>
-      </Breadcrumb>
       <div className="content">{children}</div>
     </Content>
     <Footer className="text-center">Stack Read ©2018 Created by Abkreno</Footer>
