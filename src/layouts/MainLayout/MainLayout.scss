@@ -1,0 +1,32 @@
+.main-layout {
+  height: 100vh;
+
+  .menu {
+    line-height: 64px;
+
+    .avatar {
+      margin-right: 5px;
+    }
+  }
+
+  .bread-crumb {
+    margin: 16px;
+  }
+
+  .content-container {
+    padding: 0 50px;
+  }
+
+  .content {
+    padding: 24px;
+    background: #fff;
+  }
+
+  .logo {
+    width: 120px;
+    height: 31px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 16px 24px 16px 0;
+    float: left;
+  }
+}
