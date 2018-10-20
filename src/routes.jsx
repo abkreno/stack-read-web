@@ -4,6 +4,7 @@ import MainLayout from './layouts/MainLayout';
 
 import LoginPage from './pages/LoginPage';
 import ProfilePage from './pages/ProfilePage';
+import ListsPage from './pages/ListsPage';
 import HomePage from './pages/HomePage';
 
 const routes = () => (
@@ -13,6 +14,7 @@ const routes = () => (
         <Route exact path="/" component={HomePage} />
         <Route path="/login" component={LoginPage} />
         <Route path="/profile" component={ProfilePage} />
+        <Route path="/lists" component={ListsPage} />
       </MainLayout>
     </Switch>
   </BrowserRouter>

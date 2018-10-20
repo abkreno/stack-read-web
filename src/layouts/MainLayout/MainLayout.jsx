@@ -35,7 +35,10 @@ const MainLayout = ({ children, location, history }) => (
         <Menu.Item key="home" onClick={() => history.push('/')}>
           Home
         </Menu.Item>
-        <Menu.Item key="my-lists" onClick={() => history.push('/my-lists')}>
+        <Menu.Item
+          key="my-lists"
+          onClick={() => history.push('/lists?userId=1')}
+        >
           My Lists
         </Menu.Item>
         <Menu.Item key="about" onClick={() => history.push('/about')}>
