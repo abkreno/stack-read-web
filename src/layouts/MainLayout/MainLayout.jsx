@@ -55,7 +55,9 @@ const MainLayout = ({ children, location, history }) => (
             </span>
           }
         >
-          <Menu.Item key="sub1_1">Profile</Menu.Item>
+          <Menu.Item key="sub1_1" onClick={() => history.push('/profile')}>
+            Profile
+          </Menu.Item>
           <Menu.Item key="sub1_2">Logout</Menu.Item>
         </SubMenu>
       </Menu>
